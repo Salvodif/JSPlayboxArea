@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VisualWebPartProject1.VisualWebPart1 {
+namespace MyControls.DropDownList {
     using System.Web;
     using System.Text.RegularExpressions;
     using Microsoft.SharePoint.WebPartPages;
@@ -30,31 +30,30 @@ namespace VisualWebPartProject1.VisualWebPart1 {
     using System.Web.UI.HtmlControls;
     
     
-    public partial class VisualWebPart1 {
+    public partial class DropDownListWebPart {
         
-        protected global::System.Web.UI.WebControls.DropDownList ddlWebAppsList;
+        protected global::System.Web.UI.WebControls.DropDownList myDropDownList;
         
-        public static implicit operator global::System.Web.UI.TemplateControl(VisualWebPart1 target) 
+        public static implicit operator global::System.Web.UI.TemplateControl(DropDownListWebPart target) 
         {
             return target == null ? null : target.TemplateControl;
         }
         
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
-        private global::System.Web.UI.WebControls.DropDownList @__BuildControlddlWebAppsList() {
+        private global::System.Web.UI.WebControls.DropDownList @__BuildControlmyDropDownList() {
             global::System.Web.UI.WebControls.DropDownList @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.DropDownList();
-            this.ddlWebAppsList = @__ctrl;
+            this.myDropDownList = @__ctrl;
             @__ctrl.ApplyStyleSheetSkin(this.Page);
-            @__ctrl.ID = "ddlWebAppsList";
+            @__ctrl.ID = "myDropDownList";
             return @__ctrl;
         }
         
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
-        private void @__BuildControlTree(global::VisualWebPartProject1.VisualWebPart1.VisualWebPart1 @__ctrl) {
-            System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n<label>WebApplication List</label>\r\n"));
+        private void @__BuildControlTree(global::MyControls.DropDownList.DropDownListWebPart @__ctrl) {
             global::System.Web.UI.WebControls.DropDownList @__ctrl1;
-            @__ctrl1 = this.@__BuildControlddlWebAppsList();
+            @__ctrl1 = this.@__BuildControlmyDropDownList();
+            System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(@__ctrl1);
         }
         

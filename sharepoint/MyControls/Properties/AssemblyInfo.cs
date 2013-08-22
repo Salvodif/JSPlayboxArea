@@ -6,11 +6,11 @@ using System.Security;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("VisualWebPartProject1")]
+[assembly: AssemblyTitle("MyControls")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("VisualWebPartProject1")]
+[assembly: AssemblyProduct("MyControls")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +21,7 @@ using System.Security;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3f4ceb3e-e190-400a-8732-46a00855c9ca")]
+[assembly: Guid("76e5e083-b584-4db3-86bc-228e33b9dcff")]
 
 // Version information for an assembly consists of the following four values:
 //

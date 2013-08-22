@@ -1,20 +1,20 @@
-﻿namespace VisualWebPartProject1.VisualWebPart1
+﻿namespace MyControls.DropDownList
 {
 	using System;
 	using System.ComponentModel;
 	using System.Linq;
 	using System.Web.UI.WebControls.WebParts;
-	using Microsoft.SharePoint.Administration;
+	using Microsoft.SharePoint;
 
 	[ ToolboxItem ( false ) ]
-	public partial class VisualWebPart1 : WebPart
+	public partial class DropDownListWebPart : WebPart
 	{
 		// Uncomment the following SecurityPermission attribute only when doing Performance Profiling using
 		// the Instrumentation method, and then remove the SecurityPermission attribute when the code is ready
 		// for production. Because the SecurityPermission attribute bypasses the security check for callers of
 		// your constructor, it's not recommended for production purposes.
 		// [System.Security.Permissions.SecurityPermission(System.Security.Permissions.SecurityAction.Assert, UnmanagedCode = true)]
-		public VisualWebPart1 ( )
+		public DropDownListWebPart ( )
 		{
 		}
 
@@ -29,17 +29,14 @@
 			if ( Page.IsPostBack )
 				return;
 
-			PopulateWebAppsList ( );
-		}
+			var web = SPContext.Current.Web;
 
-		public void PopulateWebAppsList ( )
-		{
-			var webService = SPFarm.Local.Services.GetValue < SPWebService > ( "" );
+			var list = web.Lists [ "TestExList" ];
 
-			var lstWebApps = webService.WebApplications.Select ( webApp => webApp.Name ).ToList ( );
+			var items = list.Items.Cast < SPListItem > ( ).Select ( s => s.Title );
 
-			ddlWebAppsList.DataSource = lstWebApps;
-			ddlWebAppsList.DataBind ( );
+			myDropDownList.DataSource = items;
+			myDropDownList.DataBind ( );
 		}
 	}
 }

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" Id="e2c3fb18-92f2-42a4-835e-2a3c4878643a" solutionId="e2c3fb18-92f2-42a4-835e-2a3c4878643a" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="MyControls">
+    <features>
+        <featureReference itemId="fb2c259d-6ea7-45be-b582-188ef4cb9808" />
+    </features>
+</package>
