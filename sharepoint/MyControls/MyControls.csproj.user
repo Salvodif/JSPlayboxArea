@@ -7,7 +7,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{BB1F664B-9266-4fd6-B973-E1E44974B511}">
         <ProjectStore>
-          <SharePointStartupItem>VisualWebPart1</SharePointStartupItem>
+          <SharePointStartupItem>DropDownList</SharePointStartupItem>
         </ProjectStore>
       </FlavorProperties>
     </VisualStudio>

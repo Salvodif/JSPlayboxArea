@@ -49,6 +49,14 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BulletedListPro\BulletedListPro.ascx.cs">
+      <DependentUpon>BulletedListPro.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="BulletedListPro\BulletedListPro.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BulletedListPro.ascx</DependentUpon>
+    </Compile>
     <Compile Include="BulletedList\BulletedListWebPart.ascx.cs">
       <DependentUpon>BulletedListWebPart.ascx</DependentUpon>
     </Compile>
@@ -65,6 +73,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="BulletedListPro\BulletedListPro.webpart" />
+    <None Include="BulletedListPro\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{94e46670-a903-4ea4-9c8a-e9afc9cf9529}</SharePointProjectItemId>
+    </None>
     <None Include="BulletedList\BulletedList.webpart" />
     <None Include="BulletedList\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{c53d3aa0-1bf6-4104-badc-170f0e351035}</SharePointProjectItemId>
@@ -77,6 +89,11 @@
     <None Include="DropDownList\Elements.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BulletedListPro\BulletedListPro.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>BulletedListPro.ascx.g.cs</LastGenOutput>
+    </Content>
+    <Content Include="BulletedListPro\Elements.xml" />
     <Content Include="BulletedList\BulletedListWebPart.ascx">
       <Generator>SharePointWebPartCodeGenerator</Generator>
       <LastGenOutput>BulletedListWebPart.ascx.g.cs</LastGenOutput>
@@ -103,6 +120,16 @@
     <None Include="Features\MyControls Feature\MyControls Feature.Template.xml">
       <DependentUpon>MyControls Feature.feature</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{20A63D56-DCBA-4EEE-8428-C557D1824B32}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PresentationLayer\PresentationLayer.csproj">
+      <Project>{3EBA9F97-3E80-4E37-A446-5F11DBCDBA02}</Project>
+      <Name>PresentationLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
