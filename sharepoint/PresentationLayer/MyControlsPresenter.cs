@@ -3,6 +3,7 @@
 	using System.Linq;
 	using Interfaces;
 	using Microsoft.SharePoint;
+	using Model;
 
 	public class MyControlsPresenter
 	{
@@ -24,6 +25,8 @@
 			var items = list.Items.Cast < SPListItem > ( ).Select ( s => s.Title );
 
 			_view.DisplayData = items;
+
+			// _view.DislayData = TestExList.GetItems ( );
 		}
 	}
 }

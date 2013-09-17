@@ -1,13 +1,10 @@
 ﻿namespace MyControls.BulletedListPro
 {
 	using System;
-using System.ComponentModel;
-using System.Web.UI.WebControls.WebParts;
-
 	using System.Collections.Generic;
-	using System.Linq;
+	using System.ComponentModel;
+	using System.Web.UI.WebControls.WebParts;
 	using Interfaces;
-	using Microsoft.SharePoint;
 	using PresentationLayer;
 
 	[ToolboxItemAttribute(false)]

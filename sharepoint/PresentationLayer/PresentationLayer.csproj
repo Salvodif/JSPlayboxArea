@@ -53,6 +53,10 @@
       <Project>{20A63D56-DCBA-4EEE-8428-C557D1824B32}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{A97F60DD-AFD3-4500-B55E-718D5BA87111}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="key.pfx" />
