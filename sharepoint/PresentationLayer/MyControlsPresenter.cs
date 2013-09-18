@@ -6,11 +6,11 @@
 
 	public class MyControlsPresenter
 	{
-		private IDataList _view;
+		private ISDFDataList _view;
 
 		private MyControlsPresenter ( ) { }
 
-		public MyControlsPresenter ( IDataList view )
+		public MyControlsPresenter ( ISDFDataList view )
 		{
 			_view = view;
 		}

@@ -8,7 +8,7 @@
 	using PresentationLayer;
 
 	[ToolboxItemAttribute(false)]
-	public partial class BulletedListPro : WebPart, IDataList
+	public partial class BulletedListPro : WebPart, ISDFDataList
 	{
 		// Uncomment the following SecurityPermission attribute only when doing Performance Profiling on a farm solution
 		// using the Instrumentation method, and then remove the SecurityPermission attribute when the code is ready
