@@ -18,15 +18,15 @@
 
 		public void Populate ( )
 		{
-			var web = SPContext.Current.Web;
+			//var web = SPContext.Current.Web;
 
-			var list = web.Lists [ "TestExList" ];
+			//var list = web.Lists [ "TestExList" ];
 
-			var items = list.Items.Cast < SPListItem > ( ).Select ( s => s.Title );
+			//var items = list.Items.Cast < SPListItem > ( ).Select ( s => s.Title );
 
-			_view.DisplayData = items;
+			//_view.DisplayData = items;
 
-			// _view.DislayData = TestExList.GetItems ( );
+			_view.DisplayData = TestExList.GetItems ( ).Select ( s => s.Title );
 		}
 	}
 }
