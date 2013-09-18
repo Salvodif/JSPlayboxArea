@@ -49,6 +49,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{5b0ab90b-929a-440c-88e8-af4214b52bd4}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{20A63D56-DCBA-4EEE-8428-C557D1824B32}</Project>
       <Name>Interfaces</Name>
