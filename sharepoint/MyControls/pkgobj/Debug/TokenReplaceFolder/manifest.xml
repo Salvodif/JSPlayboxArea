@@ -11,11 +11,22 @@
         <SafeControl Assembly="Interfaces" Namespace="Interfaces" TypeName="*" />
       </SafeControls>
     </Assembly>
+    <Assembly Location="DTO.dll" DeploymentTarget="GlobalAssemblyCache">
+      <SafeControls>
+        <SafeControl Assembly="DTO" Namespace="DTO" TypeName="*" />
+      </SafeControls>
+    </Assembly>
+    <Assembly Location="Model.dll" DeploymentTarget="GlobalAssemblyCache">
+      <SafeControls>
+        <SafeControl Assembly="Model" Namespace="Model" TypeName="*" />
+      </SafeControls>
+    </Assembly>
     <Assembly Location="MyControls.dll" DeploymentTarget="GlobalAssemblyCache">
       <SafeControls>
         <SafeControl Assembly="MyControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fba6ff952345d481" Namespace="MyControls.VisualWebPart1" TypeName="*" />
         <SafeControl Assembly="MyControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fba6ff952345d481" Namespace="MyControls.BulletedList" TypeName="*" />
         <SafeControl Assembly="MyControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fba6ff952345d481" Namespace="MyControls.BulletedListPro" TypeName="*" />
+        <SafeControl Assembly="MyControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fba6ff952345d481" Namespace="MyControls.DropDownListPro" TypeName="*" />
       </SafeControls>
     </Assembly>
   </Assemblies>

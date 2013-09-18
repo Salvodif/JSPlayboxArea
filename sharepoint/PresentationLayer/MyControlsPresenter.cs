@@ -2,7 +2,6 @@
 {
 	using System.Linq;
 	using Interfaces;
-	using Microsoft.SharePoint;
 	using Model;
 
 	public class MyControlsPresenter

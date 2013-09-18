@@ -139,9 +139,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{5b0ab90b-929a-440c-88e8-af4214b52bd4}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{20a63d56-dcba-4eee-8428-c557d1824b32}</Project>
       <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{a97f60dd-afd3-4500-b55e-718d5ba87111}</Project>
+      <Name>Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\PresentationLayer\PresentationLayer.csproj">
       <Project>{3eba9f97-3e80-4e37-a446-5f11dbcdba02}</Project>

@@ -49,13 +49,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{5B0AB90B-929A-440C-88E8-AF4214B52BD4}</Project>
-      <Name>DTO</Name>
-    </ProjectReference>
+    <None Include="key.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="key.pfx" />
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{5b0ab90b-929a-440c-88e8-af4214b52bd4}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,5 +7,7 @@
     <ElementFile Location="BulletedList\BulletedList.webpart" />
     <ElementManifest Location="BulletedListPro\Elements.xml" />
     <ElementFile Location="BulletedListPro\BulletedListPro.webpart" />
+    <ElementManifest Location="DropDownListPro\Elements.xml" />
+    <ElementFile Location="DropDownListPro\DropDownListPro.webpart" />
   </ElementManifests>
 </Feature>

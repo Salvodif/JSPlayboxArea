@@ -58,7 +58,7 @@
       <Name>Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{A97F60DD-AFD3-4500-B55E-718D5BA87111}</Project>
+      <Project>{a97f60dd-afd3-4500-b55e-718d5ba87111}</Project>
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>

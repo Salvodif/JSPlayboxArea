@@ -11,6 +11,16 @@
         <safeControl assemblyName="Interfaces" namespaceName="Interfaces" typeName="*" isSafeAgainstScript="false" />
       </safeControls>
     </projectOutputAssembly>
+    <projectOutputAssembly location="DTO.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\DTO\DTO.csproj">
+      <safeControls>
+        <safeControl assemblyName="DTO" namespaceName="DTO" typeName="*" isSafeAgainstScript="false" />
+      </safeControls>
+    </projectOutputAssembly>
+    <projectOutputAssembly location="Model.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\Model\Model.csproj">
+      <safeControls>
+        <safeControl assemblyName="Model" namespaceName="Model" typeName="*" isSafeAgainstScript="false" />
+      </safeControls>
+    </projectOutputAssembly>
   </assemblies>
   <features>
     <featureReference itemId="fb2c259d-6ea7-45be-b582-188ef4cb9808" />

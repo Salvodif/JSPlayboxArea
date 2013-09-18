@@ -14,6 +14,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{A97F60DD-AFD3-4500-B55E-718D5BA87111}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyControls", "MyControls\MyControls.csproj", "{76E5E083-B584-4DB3-86BC-228E33B9DCFF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5B0AB90B-929A-440C-88E8-AF4214B52BD4} = {5B0AB90B-929A-440C-88E8-AF4214B52BD4}
+		{A97F60DD-AFD3-4500-B55E-718D5BA87111} = {A97F60DD-AFD3-4500-B55E-718D5BA87111}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
