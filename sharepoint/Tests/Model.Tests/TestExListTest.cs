@@ -14,7 +14,7 @@
 	public class TestExListTest
 	{
 		[TestMethod]
-		public void ISDFDataList_View_WithTenElements()
+		public void ISDFDataList_View_TenElementsExist()
 		{
 			IList< MyItemDTO > items = Builder < MyItemDTO >.CreateListOfSize ( 10 )
 				.All ( )
