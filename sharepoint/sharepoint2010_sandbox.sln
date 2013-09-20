@@ -19,6 +19,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyControls", "MyControls\My
 		{A97F60DD-AFD3-4500-B55E-718D5BA87111} = {A97F60DD-AFD3-4500-B55E-718D5BA87111}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Powershell", "Powershell", "{199AAAF4-307C-4F1D-BF92-77FF45A25938}"
+	ProjectSection(SolutionItems) = preProject
+		Powershell\contenttypes.ps1 = Powershell\contenttypes.ps1
+		Powershell\get articles info.ps1 = Powershell\get articles info.ps1
+		Powershell\get documents rating.ps1 = Powershell\get documents rating.ps1
+		Powershell\item fields.ps1 = Powershell\item fields.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
