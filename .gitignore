@@ -2,18 +2,15 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/packages
-/MVC/DAL/bin/Debug
-/MVC/DAL/obj/Debug
-/MVC/DTO/bin/Debug
-/MVC/DTO/obj/Debug
-/MVC/MvcApplication1/bin
-/MVC/MvcApplication1/obj
-/MVC/MvcApplication1.Tests/bin
-/MVC/MvcApplication1.Tests/obj
-/sharepoint/PresentationLayer/bin/Debug
-/sharepoint/PresentationLayer/obj/Debug
-/sharepoint/Interfaces/obj/Debug
-/sharepoint/Interfaces/obj/Debug
-/sharepoint/MyControls/obj/Debug
-/sharepoint/MyControls/obj/Debug
+packages/
+*.suo
+*.user
+_ReSharper.*/
+*.sdf
+bin/
+obj/
+Debug/
+Release/
+*.log
+TestResult.xml
+*.VisualState.xml
