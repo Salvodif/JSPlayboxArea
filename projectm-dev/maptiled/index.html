@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tile map example</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        #map {
+            border: 1px solid block;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $( document ).ready( function () {
+            const canvas = document.getElementById( 'canvas' );
+            const ctx = canvas.getContext( '2d' );
+            const image = document.getElementById( 'source' );
+
+            const img = new Image();
+            img.src = "./tilemap.png";
+            img.onload = () => {
+                // 20 * 20
+                const map = [
+                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
+                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
+                ];
+
+                let TILE_WIDTH = TILE_HEIGHT = 30;
+                let MAP_WIDTH = MAP_HEIGHT = 20
+
+                for ( let y = 0; y < 20; y++ ) {
+                    for ( let x = 0; x < 20; x++ ) {
+                        const t = map[ y ][ x ];
+                        console.log(
+                            `x:${x} --- y:${y} --- t:${t}` );
+                        /*
+                                                        img Specifies the image, canvas, or video element to use
+                                                        sx Optional. The x coordinate where to start clipping
+                                                        sy Optional The y coordinate where to start clipping
+                                                        swidth Optional. The width of the clipped image
+                                                        sheight Optional. The height of the clipped image
+                                                        x The x coordinate where to place the image on the canvas
+                                                        y The y coordinate where to place the image on the canvas
+                                                        width Optional. The width of the image to use (stretch or reduce the image )
+                                                        height Optional. The height of the image to use( stretch or reduce the image )
+                        */
+                        ctx.drawImage( img,
+                            t * TILE_WIDTH, 0,
+                            30, 30,
+                            x * 30, y * 30,
+                            TILE_WIDTH, TILE_HEIGHT );
+                    }
+                }
+            }
+        } );
+    </script>
+</head>
+
+<body>
+
+    <canvas id="canvas" height="600px" width="600px"></canvas>
+
+</body>
+
+</html>
