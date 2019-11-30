@@ -25,57 +25,59 @@
             const ctx = canvas.getContext( '2d' );
             const image = document.getElementById( 'source' );
 
-            const img = new Image();
-            img.src = "./tilemap.png";
-            img.onload = () => {
+            const tilemap = new Image();
+            tilemap.src = "./tilemap.png";
+            tilemap.onload = () => {
                 // 20 * 20
-                const map = [
-                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
-                    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 ],
-                ];
+                var map = {
+                    cols: 8,
+                    rows: 8,
+                    imgcols: 23,
+                    imgrows: 21,
+                    tsize: 32,
+                    tiles: [
+                        1, 1, 1, 1, 69, 1, 1, 1,
+                        1, 1, 1, 1, 69, 1, 1, 1,
+                        1, 1, 1, 1, 69, 69, 69, 1,
+                        1, 1, 1, 1, 1, 1, 69, 1,
+                        1, 1, 1, 1, 1, 1, 69, 1,
+                        1, 1, 1, 1, 1, 1, 27, 1,
+                        1, 1, 1, 1, 1, 1, 69, 1,
+                        1, 1, 1, 1, 1, 1, 69, 1
+                    ],
+                    getTile: function ( col, row ) {
+                        return this.tiles[ row * map.cols + col ]
+                    }
+                };
 
-                let TILE_WIDTH = TILE_HEIGHT = 30;
-                let MAP_WIDTH = MAP_HEIGHT = 20
+                for ( var c = 0; c < map.cols; c++ ) {
+                    for ( var r = 0; r < map.rows; r++ ) {
 
-                for ( let y = 0; y < 20; y++ ) {
-                    for ( let x = 0; x < 20; x++ ) {
-                        const t = map[ y ][ x ];
-                        console.log(
-                            `x:${x} --- y:${y} --- t:${t}` );
-                        /*
-                                                        img Specifies the image, canvas, or video element to use
-                                                        sx Optional. The x coordinate where to start clipping
-                                                        sy Optional The y coordinate where to start clipping
-                                                        swidth Optional. The width of the clipped image
-                                                        sheight Optional. The height of the clipped image
-                                                        x The x coordinate where to place the image on the canvas
-                                                        y The y coordinate where to place the image on the canvas
-                                                        width Optional. The width of the image to use (stretch or reduce the image )
-                                                        height Optional. The height of the image to use( stretch or reduce the image )
-                        */
-                        ctx.drawImage( img,
-                            t * TILE_WIDTH, 0,
-                            30, 30,
-                            x * 30, y * 30,
-                            TILE_WIDTH, TILE_HEIGHT );
+                        var tile = map.getTile( c, r );
+
+                        if ( tile === 0 )
+                            continue;
+
+                        const tilex = ( tile - 1 ) % map.imgcols;
+                        const sx = tilex * map.tsize;
+                        const tiley = Math.round( tile / map.imgrows );
+                        const sy = tiley * map.tsize;;
+
+                        console.log( `
+                        Image tile number: ${tilex} -- ${tiley} \\
+                        Image source: tile: ${tile} - x: ${sx} - y:${sy}` );
+
+                        ctx.drawImage(
+                            tilemap, // image
+                            sx, // source x
+                            sy, // source y
+                            map.tsize, // source width
+                            map.tsize, // source height
+                            c * map.tsize, // target x
+                            r * map.tsize, // target y
+                            map.tsize, // target width
+                            map.tsize // target height
+                        );
                     }
                 }
             }
@@ -85,7 +87,7 @@
 
 <body>
 
-    <canvas id="canvas" height="600px" width="600px"></canvas>
+    <canvas id="canvas" height="400px" width="400px"></canvas>
 
 </body>
 
