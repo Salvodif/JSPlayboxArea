@@ -1,12 +1,15 @@
-var Player = {};
-
-Player.img = {
-    data: null,
+Game.Player = {
+    img: {
+        data: null,
+        wsize: 30,
+        hsize: 30
+    },
     type: 0,
-    wsize: 33,
-    hsize: 30
+    pos: {
+        server: 0,
+        x: 0,
+        y: 0
+    },
+    inv: {},
+    equip: {},
 };
-
-Player.pos = 5;
-Player.inv = {};
-Player.equip = {};

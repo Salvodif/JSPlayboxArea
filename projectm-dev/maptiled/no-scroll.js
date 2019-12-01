@@ -1,17 +1,20 @@
 Game.load = function () {
     return [
-        Loader.loadImage( 'tiles', 'tilemap.png' )
+        Loader.loadImage( 'tiles', 'tilemap.png' ),
+        Loader.loadImage( 'player', 'players.png' )
     ];
 };
 
 Game.init = function () {
-    this.tilemap = Loader.getImage( 'tiles' );
-    this.Map = GameMap;
+    Keyboard.listenForEvents(
+        [ Keyboard.LEFT, Keyboard.RIGHT, Keyboard.UP, Keyboard.DOWN ] );
+    Game.Map.img.data = Loader.getImage( 'tiles' );
+    Game.Player.img.data = Loader.getImage( 'player' );
+    console.log( "no-scroll:\tGame.init" );
 };
 
-Game.update = function ( delta ) {};
-
 Game.render = function () {
+    console.log( "no-scroll:\tGame.render" );
     const map = Game.Map;
 
     const maptsize = map.img.tsize;
@@ -29,7 +32,7 @@ Game.render = function () {
             const sy = tiley * maptsize;
 
             this.ctx.drawImage(
-                this.tilemap, // image
+                map.img.data, // image
                 sx, // source x
                 sy, // source y
                 maptsize, // source width
@@ -41,5 +44,33 @@ Game.render = function () {
             );
 
         }
+    }
+
+    this.ctx.drawImage( Game.Player.img.data,
+        Game.Player.type * Game.Player.img.wsize,
+        0,
+        Game.Player.img.wsize,
+        Game.Player.img.hsize,
+        Game.Player.pos.x,
+        Game.Player.pos.y,
+        Game.Player.img.wsize,
+        Game.Player.img.hsize );
+};
+
+Game.update = function () {
+    console.log( "no-scroll:\tGame.update" );
+    if ( Keyboard.isDown( Keyboard.LEFT ) ) {
+        console.log( `no-scroll:\t LEFT: ${Game.Player.pos}` );
+        --Game.Player.pos.x
+    }
+    if ( Keyboard.isDown( Keyboard.RIGHT ) ) {
+        console.log( `no-scroll:\t RIGHT: ${Game.Player.pos}` );
+        ++Game.Player.pos.x
+    }
+    if ( Keyboard.isDown( Keyboard.UP ) ) {
+        --Game.Player.pos.y;
+    }
+    if ( Keyboard.isDown( Keyboard.DOWN ) ) {
+        ++Game.Player.pos.y;
     }
 };

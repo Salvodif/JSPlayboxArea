@@ -81,6 +81,7 @@ var Game = {};
 Game.Map = {};
 
 Game.run = function ( context ) {
+    console.log( "common:\tGame.run" );
     this.ctx = context;
     this._previousElapsed = 0;
 
@@ -92,6 +93,7 @@ Game.run = function ( context ) {
 };
 
 Game.tick = function ( elapsed ) {
+    console.log( "common:\tGame.tick" );
     window.requestAnimationFrame( this.tick );
 
     // clear previous frame
@@ -109,7 +111,7 @@ Game.tick = function ( elapsed ) {
 // override these methods to create the demo
 Game.init = function () {};
 
-Game.update = function ( delta ) {};
+// Game.update = function ( delta ) {};
 Game.render = function () {};
 
 //
