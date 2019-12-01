@@ -14,80 +14,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
-        #map {
+        #demo {
             border: 1px solid block;
         }
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="gamemap.js"></script>
+    <script src="common.js"></script>
+
+    <script src="no-scroll.js"></script>
+
+    <!-- <script src="keyboard.js"></script>
+    <script src="assets.js"></script>
+    <script src="image.js"></script>
+    <script src="map.js"></script>
+    <script src="player.js"></script>
+    <script src="game.js"></script> -->
+
     <script type="text/javascript">
-        $( document ).ready( function () {
-            const canvas = document.getElementById( 'canvas' );
-            const ctx = canvas.getContext( '2d' );
-            const image = document.getElementById( 'source' );
+        // const tilemap = new Image();
+        // tilemap.src = "./tilemap.png";
+        // tilemap.onload = () => {
+        //     // 20 * 20
 
-            const tilemap = new Image();
-            tilemap.src = "./tilemap.png";
-            tilemap.onload = () => {
-                // 20 * 20
-                var map = {
-                    cols: 8,
-                    rows: 8,
-                    imgcols: 23,
-                    imgrows: 21,
-                    tsize: 32,
-                    tiles: [
-                        1, 1, 1, 1, 69, 1, 1, 1,
-                        1, 1, 1, 1, 69, 1, 1, 1,
-                        1, 1, 1, 1, 69, 69, 69, 1,
-                        1, 1, 1, 1, 1, 1, 69, 1,
-                        1, 1, 1, 1, 1, 1, 69, 1,
-                        1, 1, 1, 1, 1, 1, 27, 1,
-                        1, 1, 1, 1, 1, 1, 69, 1,
-                        1, 1, 1, 1, 1, 1, 69, 1
-                    ],
-                    getTile: function ( col, row ) {
-                        return this.tiles[ row * map.cols + col ]
-                    }
-                };
 
-                for ( var c = 0; c < map.cols; c++ ) {
-                    for ( var r = 0; r < map.rows; r++ ) {
-
-                        var tile = map.getTile( c, r );
-
-                        if ( tile === 0 )
-                            continue;
-
-                        const tilex = ( tile - 1 ) % map.imgcols;
-                        const sx = tilex * map.tsize;
-                        const tiley = Math.round( tile / map.imgrows );
-                        const sy = tiley * map.tsize;;
-
-                        console.log( `
-                        Image tile number: ${tilex} -- ${tiley} \\
-                        Image source: tile: ${tile} - x: ${sx} - y:${sy}` );
-
-                        ctx.drawImage(
-                            tilemap, // image
-                            sx, // source x
-                            sy, // source y
-                            map.tsize, // source width
-                            map.tsize, // source height
-                            c * map.tsize, // target x
-                            r * map.tsize, // target y
-                            map.tsize, // target width
-                            map.tsize // target height
-                        );
-                    }
-                }
-            }
-        } );
+        //     //     ctx.drawImage(
+        //     //         plyImg, // image
+        //     //         0, //this.type * this.wsize, // source x
+        //     //         0 //this.type * this.hsize, // source y
+        //     //     );
+        //     // };
+        // };
     </script>
 </head>
 
 <body>
 
-    <canvas id="canvas" height="400px" width="400px"></canvas>
+    <canvas id="demo" height="400px" width="400px"></canvas>
 
 </body>
 
